@@ -11,10 +11,4 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 
 
-(function(module) {
-  function errorCallback(err) {
-    console.error(err);
-    module.errorView.initErrorPage(err);
-  }
-
-})(app);
+pageXOffset( '/', () => app.Book.fetchAll(app.bookView));
