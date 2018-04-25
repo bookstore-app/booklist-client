@@ -21,3 +21,4 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   }
 
 })(app);
+pageXOffset( '/', () => app.Book.fetchAll(app.bookView));
