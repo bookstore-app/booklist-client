@@ -48,3 +48,7 @@ var app = app || {};
 
   module.booksView = booksView;
 })(app);
+
+$(document).ready(function() {
+  app.Book.fetchAll(app.booksView.initIndexPage);
+});
