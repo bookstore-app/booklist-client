@@ -7,16 +7,17 @@ var app = app || {};
 
   function showNav(section) {
     console.log('hello from the nav');
-    $('section').not(`#${section}`).hide();
-    $(`#${section}`).show();
+    $('section').not(`${section}`).hide();
+    $(`${section}`).show();
   }
 
   booksView.initIndexPage = function (ctx) {
     console.log('hello from initIndexPage', app.Book.all);
-    $('items url').empty();
-    showNav('items');
+    $('#displayBooks').empty();
+    showNav('nav');
+    $('#displayBooks').show();
     app.Book.all.forEach(book =>
-      $('#items ul').append(book.toHtml())
+      $('#displayBooks').append(book.toHtml())
     );
   };
 
@@ -27,11 +28,19 @@ var app = app || {};
 
   booksView.initBookPage = function (ctx) {
     console.log('view book', ctx.params.id);
-    $('#book').empty();
-    showNav('task');
+    $('#singleBook').empty();
+    showNav('nav');
+    $('#singleBook').show();
     app.Book.all.forEach(book => {
-      if (parseInt(book.id) === parseInt(ctx.params.id)) {
-        $('#book').append(book.detailToHtml());
+      console.log(ctx.params.id);
+
+      if (parseInt(book.book_id) === parseInt(ctx.params.id)) {
+        let template = Handlebars.compile($('#selectOneBook').text());
+        $('#singleBook').append(template(book));
+        //   $('#singleBook').append(book.selectBook());
+        // console.log('inside', $('#singleBook'));
+
+
       }
     });
   };

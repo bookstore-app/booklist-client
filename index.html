@@ -9,30 +9,24 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/icons.css">
   <link rel="stylesheet" href="styles/modules.css">
-</head>
 
-<nav>
-  <!-- <img src="insert CF icon"> -->
-  <h2>Books App</h2>
-</nav>
+
 
 <script type="text/x-handlebars-template" id="listOfBooks">
     <section class="clearfix" data-author="{{author}}" data-title="{{title}}">
-        <header>
-          <h1>{{title}}</h1>
-          <div class="author">
-            <h2>{{author}}</h2>
-          </div>
-        </header>
-        <section class="book-image"><image>{{{imageUrl}}}
-        </image>
-      </section>
-      <a href="/app/book/:id" class="view-details">View Details</a>
-      </section>
-    </script>
+      <header>
+        <h1>{{title}}</h1>
+        <div class="author">
+          <h2>{{author}}</h2>
+        </div>
+      </header>
+      <section class="book-image"><image src="{{image_url}}">
+      </image>
+    </section>
+    <a href="/booklist-client/books/{{book_id}}" class="view-details">View Details</a>
+  </section>
+</script>
 
-
-    
 <script type="text/x-handlebars-template" id="selectOneBook">
 
     <section class="clearfix" data-author="{{author}}" data-title="{{title}}">
@@ -43,7 +37,7 @@
             {{isbn}}
           </div>
         </header>
-        <section class="section-image"><image>{{{imageUrl}}}
+        <section class="section-image"><image>{{{image_url}}}
         </image>
       </section>
       <section class="description">{{{description}}}</section>
@@ -65,35 +59,28 @@
         <input type="text" placeholder="description...">
         <submit class ="newBook"></submit>
       </form>
-    </section>
-      
-      
-      
+    </section>      
     </script>
-
-<head>
-  <title>Book App</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="styles/reset.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/icons.css">
-  <link rel="stylesheet" href="styles/layout.css">
-  <link rel="stylesheet" href="styles/modules.css">
 </head>
+    
+
 
 <body>
+    <nav>
+        <!-- <img src="insert CF icon"> -->
+        <h2>Books App</h2>
+      </nav>
   <header>
-    <section>
-
-    </section>
   </header>
+      <section id="displayBooks"></section>
+      <section id="singleBook"></section>
 
   <footer>
 
 
   </footer>
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.8.6/page.min.js"></script>
   <script src="scripts/models/book.js"></script>
   <script src="scripts/views/book-view.js"></script>
