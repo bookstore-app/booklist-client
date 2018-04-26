@@ -18,16 +18,16 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   }
   Book.all = [];
   Book.prototype.toHtml = function () {
-    let template = Handlebars.compile($('#listOfBooks'));
+    console.log('toHtml');
+    let template = Handlebars.compile($('#listOfBooks').text());
     return template(this);
   };
   Book.prototype.selectBook = function () {
-    let template = Handlebars.compile($('#SelectOneBook'));
+    let template = Handlebars.compile($('#SelectOneBook').text());
     return template(this);
   };
   Book.loadAll = rows => {
     Book.all = rows.map(book => new Book(book));
-    console.log(Book.all, 'Loaded all the books');
   };
   Book.fetchAll = callback => {
     // Look into why the ternary is not working

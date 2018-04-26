@@ -7,16 +7,17 @@ var app = app || {};
 
   function showNav(section) {
     console.log('hello from the nav');
-    $('section').not(`#${section}`).hide();
-    $(`#${section}`).show();
+    $('section').not(`${section}`).hide();
+    $(`${section}`).show();
   }
 
   booksView.initIndexPage = function (ctx) {
     console.log('hello from initIndexPage', app.Book.all);
-    $('items url').empty();
-    showNav('items');
+    $('#displayBooks').empty();
+    showNav('nav');
+    $('#displayBooks').show();
     app.Book.all.forEach(book =>
-      $('#items ul').append(book.toHtml())
+      $('#displayBooks').append(book.toHtml())
     );
   };
 
