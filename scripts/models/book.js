@@ -18,11 +18,11 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   }
   Book.all = [];
   Book.prototype.toHtml = function () {
-    let template = Handlebars.compile($('#listOfBooks'));
+    let template = Handlebars.compile($('#listOfBooks').text());
     return template(this);
   };
   Book.prototype.selectBook = function () {
-    let template = Handlebars.compile($('#SelectOneBook'));
+    let template = Handlebars.compile($('#SelectOneBook').text());
     return template(this);
   };
   Book.loadAll = rows => {
