@@ -31,14 +31,13 @@
 
     <section class="clearfix" data-author="{{author}}" data-title="{{title}}">
         <header>
-          <h1>{{title}}</h1>
+          <h1 id = "singletitle">{{title}}</h1>
           <div class="author">
             <h2>{{author}}</h2>
             {{isbn}}
           </div>
         </header>
-        <section class="section-image"><image>{{{image_url}}}
-        </image>
+        <section class="section-image"><image id="singlephoto" src="{{image_url}}"></image>
       </section>
       <section class="description">{{{description}}}</section>
       <a href="/app/book/:id" class="read-more" >Read more</a>
@@ -63,8 +62,6 @@
     </script>
 </head>
     
-
-
 <body>
     <nav>
         <!-- <img src="insert CF icon"> -->

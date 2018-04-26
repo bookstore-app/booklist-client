@@ -26,7 +26,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     let template = Handlebars.compile($('#SelectOneBook').text());
     return template(this);
   };
-  
+
   Book.loadAll = rows => {
     Book.all = rows.map(book => new Book(book));
   };
