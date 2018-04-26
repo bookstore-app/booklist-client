@@ -26,12 +26,12 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     let template = Handlebars.compile($('#SelectOneBook').text());
     return template(this);
   };
+  
   Book.loadAll = rows => {
     Book.all = rows.map(book => new Book(book));
   };
   Book.fetchAll = callback => {
-    // Look into why the ternary is not working
-    $.get(`${ENV.developmentApiUrl}/api/v1/books`)
+    $.get(`${ENV.apiUrl}/api/v1/books`)
       .then(Book.loadAll)
       .then(callback)
       .catch(console.error('found an error fetching books'));

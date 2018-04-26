@@ -23,7 +23,7 @@
       <section class="book-image"><image src="{{image_url}}">
       </image>
     </section>
-    <a href="/app/book/:id" class="view-details">View Details</a>
+    <a href="/booklist-client/books/{{book_id}}" class="view-details">View Details</a>
   </section>
 </script>
 
@@ -37,7 +37,7 @@
             {{isbn}}
           </div>
         </header>
-        <section class="section-image"><image>{{{imageUrl}}}
+        <section class="section-image"><image>{{{image_url}}}
         </image>
       </section>
       <section class="description">{{{description}}}</section>
@@ -72,9 +72,8 @@
       </nav>
   <header>
   </header>
-      <section id="displayBooks">
-  
-      </section>
+      <section id="displayBooks"></section>
+      <section id="singleBook"></section>
 
   <footer>
 
