@@ -6,17 +6,17 @@ var app = app || {};
   const booksView = {};
 
   function showNav(section) {
-    console.log('index');
+    console.log('hello from the nav');
     $('section').not(`#${section}`).hide();
     $(`#${section}`).show();
   }
 
   booksView.initIndexPage = function (ctx) {
-    console.log('index');
+    console.log('hello from initIndexPage', app.Book.all);
     $('items url').empty();
     showNav('items');
     app.Book.all.forEach(book =>
-      $('#items ul').apprend(book.toHtml())
+      $('#items ul').append(book.toHtml())
     );
   };
 
@@ -45,11 +45,10 @@ var app = app || {};
       )
       .catch(console.error);
   }
-
   module.booksView = booksView;
 })(app);
 
 
-$(document).ready(function() {
-  app.Book.fetchAll(app.booksView.initIndexPage);
-});
+// $(document).ready(function() {
+//   app.Book.fetchAll(app.booksView.initIndexPage);
+// });
