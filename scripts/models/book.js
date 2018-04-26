@@ -45,4 +45,4 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     module.errorView.initErrorPage(err);
   }
 })(app);
-pageXOffset( '/', () => app.Book.fetchAll(app.bookView));
+page( '/', () => app.Book.fetchAll(app.bookView));

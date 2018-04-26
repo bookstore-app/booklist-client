@@ -9,8 +9,14 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/icons.css">
   <link rel="stylesheet" href="styles/modules.css">
-  <script type="text/x-handlebars-template" id="listOfBooks">
+  </head>
 
+  <nav>
+    <img src="insert CF icon">
+    <h2>Books App</h2>
+  </nav>
+
+  <script type="text/x-handlebars-template" id="listOfBooks">
     <section class="clearfix" data-author="{{author}}" data-title="{{title}}">
         <header>
           <h1>{{title}}</h1>
@@ -18,13 +24,13 @@
             <h2>{{author}}</h2>
           </div>
         </header>
-        <section class="section-image"><image>{{{imageUrl}}}
+        <section class="book-image"><image>{{{imageUrl}}}
         </image>
       </section>
       <a href="/app/book/:id" class="view-details" >View Details</a>
       </section>
-
     </script>
+
   <script type="text/x-handlebars-template" id="selectOneBook">
 
     <section class="clearfix" data-author="{{author}}" data-title="{{title}}">
@@ -47,6 +53,17 @@
 
   <script type="text/x-handlebars-template" id="addNewBook">
       
+    <section>
+      <h1>Add a New Book</h1>
+      <form>
+        <input type="text" placeholder="title">
+        <input type="text" placeholder="author">
+        <input type="text" placeholder="isbn">
+        <input type="text" placeholder="image url">
+        <input type="text" placeholder="description...">
+        <submit class ="newBook"></submit>
+      </form>
+    </section>
       
       
       
