@@ -1,0 +1,18 @@
+#singleBook {
+  display: block;
+  margin: auto;
+  border: 1px solid black;
+  width: 70%;
+}
+#singlephoto {
+  display: block;
+  width: 40%;
+  margin: auto
+}
+#singletitle {
+  font-size: 25px;
+}
+.author {
+  font-size: 18px;
+  display:inline-block;
+}
