@@ -18,10 +18,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   }
   Book.all = [];
   Book.prototype.toHtml = function () {
-<<<<<<< HEAD
-=======
     console.log('toHtml');
->>>>>>> 3004995e1a96750e168f0dfe20c6533b976b7fd2
     let template = Handlebars.compile($('#listOfBooks').text());
     return template(this);
   };
@@ -29,7 +26,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     let template = Handlebars.compile($('#SelectOneBook').text());
     return template(this);
   };
-  
+
   Book.loadAll = rows => {
     Book.all = rows.map(book => new Book(book));
   };
