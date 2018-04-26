@@ -1,9 +1,9 @@
 'use strict';
 
-vvar app = app || {};
+var app = app || {};
 
-(function(module) {
-  var errorView ={};
+(function (module) {
+  var errorView = {};
 
   let err = {
     status: 404,
@@ -11,7 +11,7 @@ vvar app = app || {};
   }
 
   errorView.initErrorPage = err => {
-    $.get`${ENV.`
+    $.get`${ENV.
   }
 
 
