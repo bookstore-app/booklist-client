@@ -2,17 +2,17 @@
 
 var app = app || {};
 
-(function (module) {
-  var errorView = {};
+// (function (module) {
+//   var errorView = {};
 
-  let err = {
-    status: 404,
-    message: "page not found"
-  }
+//   let err = {
+//     status: 404,
+//     message: "page not found"
+//   }
 
-  errorView.initErrorPage = err => {
-    $.get`${ENV.
-  }
+//   errorView.initErrorPage = err => {
+//     $.get`${ENV.
+//   }
 
 
-})(app);
+// })(app);

@@ -11,7 +11,7 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 
 
-(function(module) {
+(function (module) {
 
   function Book(obj) {
     Object.assign(this, obj);
@@ -30,10 +30,13 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     console.log(Book.all, 'Loaded all the books');
   };
   Book.fetchAll = callback => {
-    $.get(`${ENV.apiURL}/api/v1/books`)
+    // Look into why the ternary is not working
+    $.get(`${ENV.developmentApiUrl}/api/v1/books`)
       .then(Book.loadAll)
       .then(callback)
-      .catch(console.error('found an error fetching books', errCallBack));
+      .catch(console.error('found an error fetching books'));
+    // .catch(console.error('found an error fetching books', errCallBack));
+
   };
   Book.newBook = book => {
     $.post(`${ENV.apiURL}/books/new`, book)
@@ -44,5 +47,5 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     console.error(err);
     module.errorView.initErrorPage(err);
   }
+  module.Book = Book;
 })(app);
-page( '/', () => app.Book.fetchAll(app.bookView));

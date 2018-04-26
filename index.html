@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/icons.css">
   <link rel="stylesheet" href="styles/modules.css">
-  </head>
+</head>
 
-  <nav>
-    <img src="insert CF icon">
-    <h2>Books App</h2>
-  </nav>
+<nav>
+  <!-- <img src="insert CF icon"> -->
+  <h2>Books App</h2>
+</nav>
 
-  <script type="text/x-handlebars-template" id="listOfBooks">
+<script type="text/x-handlebars-template" id="listOfBooks">
     <section class="clearfix" data-author="{{author}}" data-title="{{title}}">
         <header>
           <h1>{{title}}</h1>
@@ -27,11 +27,13 @@
         <section class="book-image"><image>{{{imageUrl}}}
         </image>
       </section>
-      <a href="/app/book/:id" class="view-details" >View Details</a>
+      <a href="/app/book/:id" class="view-details">View Details</a>
       </section>
     </script>
 
-  <script type="text/x-handlebars-template" id="selectOneBook">
+
+    
+<script type="text/x-handlebars-template" id="selectOneBook">
 
     <section class="clearfix" data-author="{{author}}" data-title="{{title}}">
         <header>
@@ -51,7 +53,7 @@
 
 </script>
 
-  <script type="text/x-handlebars-template" id="addNewBook">
+<script type="text/x-handlebars-template" id="addNewBook">
       
     <section>
       <h1>Add a New Book</h1>
@@ -69,32 +71,34 @@
       
     </script>
 
-  <head>
-    <title>Book App</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/icons.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/modules.css">
-  </head>
+<head>
+  <title>Book App</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/icons.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/modules.css">
+</head>
 
-  <body>
-    <header>
-      <section>
+<body>
+  <header>
+    <section>
 
-      </section>
-    </header>
+    </section>
+  </header>
 
-    <footer>
+  <footer>
 
 
-    </footer>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.js"></script>
-    <script src="scripts/views/book-view.js"></script>
-    <script src="scripts/views/error-view.js"></script>
-    <script src="scripts/controller/routes.js"></script>
-  </body>
+  </footer>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.amd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.8.6/page.min.js"></script>
+  <script src="scripts/models/book.js"></script>
+  <script src="scripts/views/book-view.js"></script>
+  <script src="scripts/views/error-view.js"></script>
+  <script src="scripts/controller/routes.js"></script>
+</body>
 
 </html>
